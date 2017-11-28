@@ -21,6 +21,10 @@ import {ConfirmationPopoverWindowOptions} from './confirmationPopoverOptions.pro
     .btn {
       transition: none;
     }
+    .btn-sm {
+      padding: 0.125rem 0.25rem;
+      font-size: 0.75rem;
+    }
   `],
   template: `
     <ng-template #defaultTemplate let-options="options">
@@ -38,26 +42,26 @@ import {ConfirmationPopoverWindowOptions} from './confirmationPopoverOptions.pro
           <div class="row">
             <div
               class="col-xs-6 col-6"
-              [ngClass]="{'col-xs-offset-3 col-offset-3': options.hideCancelButton}"
-              *ngIf="!options.hideConfirmButton">
-              <button
-                type="button"
-                [mwlFocus]="options.focusButton === 'confirm'"
-                [class]="'btn btn-block btn-' + options.confirmButtonType"
-                (click)="options.onConfirm({clickEvent: $event})"
-                [innerHtml]="options.confirmText">
-              </button>
-            </div>
-            <div
-              class="col-xs-6 col-6"
               [ngClass]="{'col-xs-offset-3 col-offset-3': options.hideConfirmButton}"
               *ngIf="!options.hideCancelButton">
               <button
                 type="button"
                 [mwlFocus]="options.focusButton === 'cancel'"
-                [class]="'btn btn-block btn-' + options.cancelButtonType"
+                [class]="'btn btn-block btn-sm btn-' + options.cancelButtonType"
                 (click)="options.onCancel({clickEvent: $event})"
                 [innerHtml]="options.cancelText">
+              </button>
+            </div>
+            <div
+              class="col-xs-6 col-6"
+              [ngClass]="{'col-xs-offset-3 col-offset-3': options.hideCancelButton}"
+              *ngIf="!options.hideConfirmButton">
+              <button
+                type="button"
+                [mwlFocus]="options.focusButton === 'confirm'"
+                [class]="'btn btn-block btn-sm btn-' + options.confirmButtonType"
+                (click)="options.onConfirm({clickEvent: $event})"
+                [innerHtml]="options.confirmText">
               </button>
             </div>
           </div>

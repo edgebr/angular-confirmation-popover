@@ -198,68 +198,18 @@ export class ConfirmationPopover implements OnDestroy, OnChanges, OnInit {
     @Inject(DOCUMENT) private document //tslint:disable-line
   ) {}
 
-  /**
-   * @private
-   */
-  ngOnInit(): void {
-    this.isOpenChange.emit(false);
-  }
 
-  /**
-   * @private
-   */
-  ngOnChanges(changes: any): void {
-    if (changes.isOpen) {
-      if (changes.isOpen.currentValue === true) {
-        this.showPopover();
-      } else {
-        this.hidePopover();
-      }
+  public hidePopover(): void {
+    if (this.popover) {
+      this.popover.destroy();
+      this.popover = null;
+      this.isOpenChange.emit(false);
+      this.eventListeners.forEach(fn => fn());
+      this.eventListeners = [];
     }
   }
 
-  /**
-   * @private
-   */
-  ngOnDestroy(): void {
-    this.hidePopover();
-  }
-
-  /**
-   * @private
-   */
-  onConfirm(event: ConfirmCancelEvent): void {
-    this.confirm.emit(event);
-    this.hidePopover();
-  }
-
-  /**
-   * @private
-   */
-  onCancel(event: ConfirmCancelEvent): void {
-    this.cancel.emit(event);
-    this.hidePopover();
-  }
-
-  /**
-   * @private
-   */
-  @HostListener('click')
-  togglePopover(): void {
-    if (!this.popover) {
-      this.showPopover();
-    } else {
-      this.hidePopover();
-    }
-  }
-
-  private onDocumentClick(event: Event): void {
-    if (this.popover && !this.elm.nativeElement.contains(event.target) && !this.popover.location.nativeElement.contains(event.target)) {
-      this.hidePopover();
-    }
-  }
-
-  private showPopover(): void {
+  public showPopover(): void {
     if (!this.popover && !this.isDisabled) {
 
       this.eventListeners = [
@@ -318,6 +268,57 @@ export class ConfirmationPopover implements OnDestroy, OnChanges, OnInit {
     }
   }
 
+
+  /**
+   * @private
+   */
+  ngOnInit(): void {
+    this.isOpenChange.emit(false);
+  }
+
+  /**
+   * @private
+   */
+  ngOnChanges(changes: any): void {
+    if (changes.isOpen) {
+      if (changes.isOpen.currentValue === true) {
+        this.showPopover();
+      } else {
+        this.hidePopover();
+      }
+    }
+  }
+
+  /**
+   * @private
+   */
+  ngOnDestroy(): void {
+    this.hidePopover();
+  }
+
+  /**
+   * @private
+   */
+  onConfirm(event: ConfirmCancelEvent): void {
+    this.confirm.emit(event);
+    this.hidePopover();
+  }
+
+  /**
+   * @private
+   */
+  onCancel(event: ConfirmCancelEvent): void {
+    this.cancel.emit(event);
+    this.hidePopover();
+  }
+
+  private onDocumentClick(event: Event): void {
+    if (this.popover && !this.elm.nativeElement.contains(event.target) && !this.popover.location.nativeElement.contains(event.target)) {
+      this.hidePopover();
+    }
+  }
+
+
   private positionPopover(): void {
     if (this.popover) {
       const popoverElement: HTMLElement = this.popover.location.nativeElement.children[0];
@@ -329,16 +330,6 @@ export class ConfirmationPopover implements OnDestroy, OnChanges, OnInit {
       );
       this.renderer.setStyle(popoverElement, 'top', `${popoverPosition.top}px`);
       this.renderer.setStyle(popoverElement, 'left', `${popoverPosition.left}px`);
-    }
-  }
-
-  private hidePopover(): void {
-    if (this.popover) {
-      this.popover.destroy();
-      this.popover = null;
-      this.isOpenChange.emit(false);
-      this.eventListeners.forEach(fn => fn());
-      this.eventListeners = [];
     }
   }
 
