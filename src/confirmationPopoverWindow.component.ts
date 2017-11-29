@@ -22,8 +22,8 @@ import {ConfirmationPopoverWindowOptions} from './confirmationPopoverOptions.pro
       transition: none;
     }
     .btn-sm {
-      padding: 0.125rem 0.25rem;
-      font-size: 0.75rem;
+      padding: 1px 8px;
+      font-size: 10px;
     }
   `],
   template: `
