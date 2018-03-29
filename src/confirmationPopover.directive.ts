@@ -22,7 +22,7 @@ import {
 import {DOCUMENT} from '@angular/platform-browser';
 import {ConfirmationPopoverWindow} from './confirmationPopoverWindow.component';
 import {ConfirmationPopoverOptions, ConfirmationPopoverWindowOptions} from './confirmationPopoverOptions.provider';
-import {Positioning} from 'positioning';
+import { Positioning } from 'ng-bootstrap';
 
 /**
  * @private

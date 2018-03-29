@@ -1,10 +1,10 @@
 import {NgModule, ModuleWithProviders, InjectionToken} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {Positioning} from 'positioning';
 import {ConfirmationPopover} from './confirmationPopover.directive';
 import {ConfirmationPopoverWindow} from './confirmationPopoverWindow.component';
 import {Focus} from './focus.directive';
 import {ConfirmationPopoverOptions, ConfirmationPopoverOptionsInterface} from './confirmationPopoverOptions.provider';
+import { Positioning } from 'ng-bootstrap';
 
 export const USER_OPTIONS: InjectionToken<string> = new InjectionToken('confirmation popover user options');
 
