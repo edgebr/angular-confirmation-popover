@@ -1,6 +1,6 @@
 {
   "name": "@edgebr/angular-confirmation-popover",
-  "version": "3.4.4",
+  "version": "3.4.6",
   "description": "An angular 4.0+ bootstrap confirmation popover",
   "main": "./dist/umd/angular-confirmation-popover.js",
   "module": "./dist/esm/src/index.js",
