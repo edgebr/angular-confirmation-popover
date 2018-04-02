@@ -19,10 +19,10 @@ import {
   TemplateRef,
   ComponentFactory
 } from '@angular/core';
-import {DOCUMENT} from '@angular/platform-browser';
-import {ConfirmationPopoverWindow} from './confirmationPopoverWindow.component';
-import {ConfirmationPopoverOptions, ConfirmationPopoverWindowOptions} from './confirmationPopoverOptions.provider';
-import { Positioning } from 'ng-bootstrap';
+import { DOCUMENT } from '@angular/platform-browser';
+import { ConfirmationPopoverWindow } from './confirmationPopoverWindow.component';
+import { ConfirmationPopoverOptions, ConfirmationPopoverWindowOptions } from './confirmationPopoverOptions.provider';
+import { Positioning } from 'ngx-bootstrap';
 
 /**
  * @private

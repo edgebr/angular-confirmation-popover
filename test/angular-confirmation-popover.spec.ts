@@ -21,7 +21,7 @@ import {
   BrowserDynamicTestingModule,
   platformBrowserDynamicTesting
 } from '@angular/platform-browser-dynamic/testing';
-import {Positioning} from 'ng-bootstrap';
+import {Positioning} from 'ngx-bootstrap';
 import {ConfirmationPopoverModule} from '../src';
 import {ConfirmationPopover} from '../src/confirmationPopover.directive';
 import {ConfirmationPopoverWindow} from '../src/confirmationPopoverWindow.component';
