@@ -1,16 +1,13 @@
-import {TemplateRef, Injectable} from '@angular/core';
-
 export interface ConfirmationPopoverOptionsInterface {
-
   /**
    * The popover title
    */
-  title?: string;
+  popoverTitle?: string;
 
   /**
    * The popover message
    */
-  message?: string;
+  popoverMessage?: string;
 
   /**
    * The popover confirmation button text
@@ -62,12 +59,21 @@ export interface ConfirmationPopoverOptionsInterface {
    */
   appendToBody?: boolean;
 
+  /**
+   * Swap the order of the confirm and cancel buttons
+   */
+  reverseButtonOrder?: boolean;
+
+  /**
+   * Whether or not the popover should stay open when clicking outside it
+   */
+  closeOnOutsideClick?: boolean;
 }
 
-export class ConfirmationPopoverOptions implements ConfirmationPopoverOptionsInterface {
-
-  title: string;
-  message: string;
+export class ConfirmationPopoverOptions
+  implements ConfirmationPopoverOptionsInterface {
+  popoverTitle: string;
+  popoverMessage: string;
   confirmText: string = 'Confirm';
   cancelText: string = 'Cancel';
   confirmButtonType: string = 'success';
@@ -78,18 +84,6 @@ export class ConfirmationPopoverOptions implements ConfirmationPopoverOptionsInt
   hideCancelButton: boolean = false;
   popoverClass: string = '';
   appendToBody: boolean = false;
-
-}
-
-/**
- * @private
- */
-@Injectable()
-export class ConfirmationPopoverWindowOptions extends ConfirmationPopoverOptions {
-
-  public onConfirm: Function;
-  public onCancel: Function;
-  public onAfterViewInit: Function;
-  public customTemplate: TemplateRef<any>;
-
+  reverseButtonOrder: boolean = false;
+  closeOnOutsideClick: boolean = true;
 }
