@@ -2,6 +2,82 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.2.1"></a>
+## [4.2.1](https://github.com/mattlewis92/angular-confirmation-popover/compare/v4.2.0...v4.2.1) (2019-06-24)
+
+
+### Bug Fixes
+
+* allow angular 8 peer dependency ([9aa2a5b](https://github.com/mattlewis92/angular-confirmation-popover/commit/9aa2a5b))
+
+
+
+<a name="4.2.0"></a>
+# [4.2.0](https://github.com/mattlewis92/angular-confirmation-popover/compare/v4.1.1...v4.2.0) (2018-08-09)
+
+
+### Features
+
+* add closeOnOutsideClick input ([1789efa](https://github.com/mattlewis92/angular-confirmation-popover/commit/1789efa))
+
+
+
+<a name="4.1.1"></a>
+## [4.1.1](https://github.com/mattlewis92/angular-confirmation-popover/compare/v4.1.0...v4.1.1) (2018-06-16)
+
+
+### Bug Fixes
+
+* allow popover title and message to be configured globally ([1253590](https://github.com/mattlewis92/angular-confirmation-popover/commit/1253590)), closes [#77](https://github.com/mattlewis92/angular-confirmation-popover/issues/77)
+
+
+
+<a name="4.1.0"></a>
+# [4.1.0](https://github.com/mattlewis92/angular-confirmation-popover/compare/v4.0.0...v4.1.0) (2018-02-10)
+
+
+### Features
+
+* add a tag name to the popover window component ([85902d6](https://github.com/mattlewis92/angular-confirmation-popover/commit/85902d6)), closes [#70](https://github.com/mattlewis92/angular-confirmation-popover/issues/70)
+
+
+
+<a name="4.0.0"></a>
+# [4.0.0](https://github.com/mattlewis92/angular-confirmation-popover/compare/v3.4.2...v4.0.0) (2017-12-24)
+
+
+### Features
+
+* remove deprecated `title` and `message` options ([872bc8f](https://github.com/mattlewis92/angular-confirmation-popover/commit/872bc8f)), closes [#62](https://github.com/mattlewis92/angular-confirmation-popover/issues/62)
+* upgrade to angular 5 ([e463e8c](https://github.com/mattlewis92/angular-confirmation-popover/commit/e463e8c))
+* use ng-packagr for bundling the library ([8bc9a0c](https://github.com/mattlewis92/angular-confirmation-popover/commit/8bc9a0c))
+* **reverseButtonOrder:** allow the button order to be reversed ([a6ca883](https://github.com/mattlewis92/angular-confirmation-popover/commit/a6ca883))
+
+
+### BREAKING CHANGES
+
+* **reverseButtonOrder:** By default the cancel button is on the left and the confirm button is on the right.
+To get the old behaviour set `reverseButtonOrder` to true. Also flexbox is now required to use this
+package, so IE10 or higher is now required to use this package.
+* The umd bundle path has changed from
+`angular-confirmation-popover/dist/umd/angular-confirmation-popover.js` to
+`angular-confirmation-popover/bundles/angular-confirmation-popover.umd.js`
+* angular 5 or higher is now required to use this package
+* The `title` option has been renamed to `popoverTitle`, and `message` has been renamed to
+`popoverMessage`
+
+
+
+<a name="3.4.2"></a>
+## [3.4.2](https://github.com/mattlewis92/angular-confirmation-popover/compare/v3.4.1...v3.4.2) (2017-12-24)
+
+
+### Bug Fixes
+
+* **isOpen:** allow an external button click to open the popover ([85be07d](https://github.com/mattlewis92/angular-confirmation-popover/commit/85be07d))
+
+
+
 <a name="3.4.1"></a>
 ## [3.4.1](https://github.com/mattlewis92/angular-confirmation-popover/compare/v3.4.0...v3.4.1) (2017-11-21)
 
