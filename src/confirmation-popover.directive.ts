@@ -225,18 +225,6 @@ export class ConfirmationPopoverDirective
     this.hidePopover();
   }
 
-  /**
-   * @internal
-   */
-  @HostListener('click')
-  togglePopover(): void {
-    if (!this.popover) {
-      this.showPopover();
-    } else {
-      this.hidePopover();
-    }
-  }
-
   private onDocumentClick(event: Event): void {
     const closeOnOutsideClick =
       typeof this.closeOnOutsideClick !== 'undefined'
